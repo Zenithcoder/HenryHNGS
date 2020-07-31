@@ -1,0 +1,63 @@
+{
+    "name": "HenryHNGS",
+    "title": "Henry Hub Natural Gas Spot Database",
+    "description": "Henry Hub Natural Gas Spot Dataset",
+    "homepage": "https://www.eia.gov/",
+    "version": "0.1.0",
+    "licenses": [
+      {
+        "name": "ODC-PDDL-1.0",
+        "path": "http://opendatacommons.org/licenses/pddl/",
+        "title": "Open Data Commons Public Domain Dedication and License v1.0"
+      }
+    ],
+    "sources": [
+      {
+        "name": "HenryHNGS",
+        "path": "https://www.eia.gov/",
+        "title": "HHNGS"
+      }
+    ],
+    "resources": [
+      {
+        "name": "daily",
+        "path": "data/daily.csv",
+        "format": "csv",
+        "mediatype": "text/csv",
+        "schema": {
+          "fields": [
+            {
+              "name": "date",
+              "type": "string",
+              "description": ""
+            },
+            {
+              "name": "price",
+              "type": "string",
+              "description": ""
+            }
+          ]
+        }
+      },
+      {
+        "name": "monthly",
+        "path": "data/monthly.csv",
+        "format": "csv",
+        "mediatype": "text/csv",
+        "schema": {
+          "fields": [
+            {
+                "name": "date",
+                "type": "string",
+                "description": ""
+              },
+              {
+                "name": "price",
+                "type": "string",
+                "description": ""
+              }
+          ]
+        }
+      }
+    ]
+  }
