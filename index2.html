@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<body>
+<style>
+    body {
+  background-color: #3c3c3c;
+  color: #cfcfcf;
+}
+
+div {
+  line-height: 15px;
+  margin-bottom: 3px;
+  background-color: grey;
+  text-align: right;
+  padding-right: 5px;
+  font-size: 10px;
+  color: #cfcfcf;
+}
+</style>
+ 
+<p>Daily</p>
+<div id="daily"></div>
+
+ 
+<script src="https://d3js.org/d3.v5.min.js"></script>
+ <script>
+  var title = "";
+
+d3.select("#daily")
+  .append("h3")
+  .text(title);
+
+d3.csv('https://raw.githubusercontent.com/Zenithcoder/HenryHNGS/master/data/daily.csv', d3.autoType).then(function (data) {
+  d3.select("body")
+    .selectAll("div")
+    .data(data)
+    .enter()
+    .append("div")
+    .style("width", function(d) {  return d.Price * 100 + "px"; })
+    .style("height", "15px")
+    .text(function(d) { return (d.Date).toLocaleString()});
+});
+
+    </script>
+    
+ 
+</body>
+</html>
